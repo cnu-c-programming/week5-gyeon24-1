@@ -1,22 +1,13 @@
 #include <stdio.h>
 
 int main(){
-  int a = 10, b=20, c=30, d=40;
-  int *arr[] = {&a, &b, &c, &d};
-  int **pp = arr;
+  char* alphas[] = {"abc", "def", "hij"};
 
-  int **base = arr;
+  int size = sizeof(alphas) / sizeof(alphas[0]);
 
-  printf("%ld\n", (char *)pp - (char *)base);
-
-  pp = pp + 1;
-  printf("%ld\n", (char *)pp - (char *)base);
-
-  pp = pp + 1;
-  printf("%ld\n", (char *)pp - (char *)base);
-
-  pp = pp + 1;
-  printf("%ld\n", (char *)pp - (char *)base);
+  for(int i=0;i<size;i++){
+    printf("%s\n", alphas[i]);
+  }
   
   return 0; 
 }
